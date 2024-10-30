@@ -1,0 +1,103 @@
+﻿/* URL Paleta de colores LIGHT: https://www.coloreasily.com/?colors=2a090e-fff5f5-b02134-ffd1d8-5e030f */
+/* URL Paleta de colores DARK: https://www.coloreasily.com/?colors=f7efed-2e1715-a25349-4d2823-713a33 */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara');
+
+body{
+   margin:0;
+   padding:0;
+   background-color: #010000;
+}
+#encabezado-principal {
+   background-image: url(https://img.freepik.com/foto-gratis/cocina-rustica-electrodomesticos-modernos-interior-generados-ia_188544-38458.jpg);
+   background-size: cover; /* Ajusta la imagen al tamaño del div */
+   background-position: center; /* Centra la imagen */
+   height: 100vh; /* Ajusta la altura del div para que la imagen se vea completa */
+}
+#navegacion-categoria{
+   text-align: center;
+}
+#navegacion-categoria a{
+   text-decoration: none;
+   border-radius: 10px;
+   color:#2e1715;
+   font-size: 20px;
+   padding: 5px;
+   background-color: rgba(250, 235, 215, 0.496);
+   margin: 8px;
+}
+
+#navegacion-categoria a:hover{
+   background-color: rgb(250, 235, 215);
+   font-weight: 600;
+}
+
+
+p{
+   font-family: 'Hind Vandadora';
+   color: aliceblue;
+}
+img {
+   width: 440px;
+   height: 440px;
+}
+#titulo-imagen h1{
+   border-radius: 0.3cap;
+   font-size: 60px;
+}
+
+#encabezado-principal {
+   font-family: 'Crimson Text';
+   font-size: 25px;
+   text-align: center;
+   display: inline-block; /* Fondo solo cubre el contenido */
+}
+
+#titulo{
+   background-color: hwb(0 0% 91% / 0.875);
+   color:rgb(255, 240, 211);
+   display: inline-block; /* Fondo solo cubre el contenido */
+   padding:10px; /* Agrega un poco de espacio alrededor del título */
+   
+   
+}
+#parrafo-inicio{
+   background-color: hwb(0 4% 96% / 0.944);
+   padding: 20px;
+   display: inline-block; /* Fondo solo cubre el contenido */
+   justify-content: center;
+   border-radius: 10px;
+}
+
+#imagen-logo-principal{
+   
+   margin-bottom: -55px;
+   
+   border-radius: 100%;
+   width: 150px;
+   height: 150px;
+   
+}
+:root {
+   --light-color-texto: #2a090e;
+   --light-color-fondo: #fff5f5;
+   --light-color-acento-1: #b02134;
+   --light-color-acento-2: #ffd1d8;
+   --light-color-acento-3: #5e030f;
+   --dark-color-texto: #f7efed;
+   --dark-color-fondo: #2e1715;
+   --dark-color-acento-1: #a25349;
+   --dark-color-acento-2: #4d2823;
+   --dark-color-acento-3: #713a33;
+}
+
+.light-theme {
+   color: #2a090e;
+   background-color: #fff5f5;
+}
+
+.dark-theme {
+   color: #f7efed;
+   background-color: #2e1715;
+}

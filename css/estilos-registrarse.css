@@ -1,0 +1,117 @@
+﻿*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Crimson Text';
+
+}
+
+
+.formulario-contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-position: center center;
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-image: url(../imagenes/imagenFondo.png);
+   
+
+}
+
+.formulario-inicio{
+    border: 4px solid black;
+    border-radius:3px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#fff5f5;
+    max-width: 570px;
+    min-width: 20%; /*la prioridad la tiene este */
+    margin: auto;
+    /**
+    width: min-content; /* yo quiero que minimo tengas este minimo de tamanio*/
+   /* max-width: 50%; /*hasta aca llegas*/
+    /**/
+    padding: 10px 80px ;
+    height: 480px;
+}
+.formulario-inicio h2{
+    color: black;
+    text-align: center;
+    font-size:3.2rem;
+    text-shadow: 0px 7px 7px rgba(rgb(240, 190, 26), green, blue, alpha);
+
+
+}
+
+.formulario-inputs{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top:10px ;
+    margin-bottom: 10px;
+    
+}
+.formulario-inputs div{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.formulario-inputs input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius:5px ;
+}
+
+.input ::placeholder{
+    font-size: 2rem;
+}
+.formulario-contenido a {
+    text-decoration: none;
+}
+
+.formulario-inicio button{
+    padding: 20px;
+    color: rgb(21, 17, 0);
+    background-color: rgba(255, 254, 218, 0.979);
+    font-size: 20px;
+    font-weight: bolder;
+    font-weight: 900;
+    
+}
+.formulario-inicio button:hover{
+    background-color: #a25349;
+    transition: all 0.5s;
+    color:#f7efed;
+
+}
+.seccion-iniciar-sesion{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 18px;
+}
+
+.aceptar-terminos-condiciones{
+    display: flex;
+    justify-content: center;
+}
+
+.input-group {
+    position: relative;
+}
+
+#icono-ojo {
+    position:absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 10px;
+    cursor: pointer;
+    width: 20px; 
+    height: 20px; 
+}
