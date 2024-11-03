@@ -87,7 +87,7 @@ input::placeholder{
 }
 .formularios button{
     background-color: rgba(255, 254, 218, 0.979);
-    color: rgb(21, 17, 0);
+    color: #f7efed;
     font-weight: bolder;
     margin: auto;
     margin-top:10px;
@@ -96,8 +96,8 @@ input::placeholder{
     margin-top: 50px;
 }
 .formularios button:hover{
-    background-color: #a25349;
-   color:#f7efed;
+    background-color: #db9a91;
+   color:#876962;
    transition: all 0.5s;
 }
 .seccion-registro{
