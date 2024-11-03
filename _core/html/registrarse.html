@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="/css/estilos-registrarse.css">
-   <title>Registro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="/css/estilos-registrarse.css">
+    <title>Registro</title>
 </head>
+
 <body>
-   <section class="formulario-contenido">
-   <form class="formulario-inicio">
-         <h2>Registrarse</h2>
-         <div class="formulario-inputs">
-            <div>
-               <input type="text" name="EMAIL" id="email" placeholder="Email*">
+    <section class="formulario-contenido">
+        <form class="formulario-inicio">
+            <h2>Registrarse</h2>
+            <div class="formulario-inputs" id="formulario">
+                <div class="email-group" id="email-group">
+                    <input type="text" name="email" id="email" class="formulario-input" placeholder="Email*">
+                    <img class="icono-check" src="/assets/img/boxicons-2.1.4-SVG-36/svg/bx-check-circle.svg">
+                    <img class="icono-correoNoValido" src="/assets/img/boxicons-2.1.4-SVG-36/svg/bx-x-circle.svg">
+                    <p class="formulario-input-error">El correo debe contener '@' y terminar en '.com, .org o .net'.</p>
+                </div>
+                <div class="password-group" id="password-group">
+                    <input type="password" name="contrasenia" id="contrasenia" class="formulario-input" placeholder="Contraseña*">
+                    <img class="icono-check" src="/assets/img/boxicons-2.1.4-SVG-36/svg/bx-check-circle.svg">
+                    <img class="icono-correoNoValido" src="/assets/img/boxicons-2.1.4-SVG-36/svg/bx-x-circle.svg">
+                    <i class="bx bx-show-alt"></i>
+                    <p class="formulario-input-error">La contraseña debe tener entre 8 y 12 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.</p>
+                </div>
+
+                <!-- Mensaje general -->
+                <div class="formulario-mensaje" id="formulario-mensaje">
+                    <p class="error"><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
+                    <p class="exito"> FORMULARIO ENVIADO </p>
+                </div>
             </div>
-            <div class="input-group">
-               <input type="text" name="contrasenia" id="contrasenia" placeholder="Contrasenia*">
-               <img src="../IconosGenerales/iconoOjo.png" alt="icono-ojo" id="icono-ojo">
-                     <a _ngcontent-syy-c104="" href="#" tabindex="-1" preventdefault="" class="position-absolute end-0 top-50 text-black ng-star-inserted"
-                     style="transform: translate(-50%, -50%); z-index: 6;"><mc-icon _ngcontent-syy-c104="">
-                        </mc-icon></a>
+            <button type="submit" id="boton">REGISTRARSE</button>
+            <div class="seccion-iniciar-sesion">
+                <p>¿Ya tenes cuenta? <a href="../html/login.html" target="_blank"> Iniciar sesión </a></p>
+            </div>
+            <div class="aceptar-terminos-condiciones">
+                <p>Al continuar, confirmo que he leído los <a href="" target="_blank">Términos y condiciones</a> y las <a href="" target="_blank"> Políticas de privacidad</a> de ©La Recetona 1947-2024</p>
 
             </div>
-         </div>
-         <button> REGISTRARSE</button>
-         <div class="seccion-iniciar-sesion">
-            <p>¿Ya tenes cuenta? <a href="../html/login.html" target="_blank"> Iniciar sesión </a></p>
-      
-         </div>
-         
-
-         <div class="aceptar-terminos-condiciones">
-            <p>Al continuar, confirmo que he leído los <a href="" target="_blank">Términos y condiciones</a> y las <a href="" target="_blank"> Políticas de privacidad</a> de ©La Recetona 1947-2024</p>
-
-         </div>
-      </form>
-   </section>
-   <script src="/_core/js/registrarse.js"></script>
+        </form>
+    </section>
+    <script src="/_core/js/registrarse.js"></script>
 </body>
+
 </html>
