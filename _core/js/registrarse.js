@@ -1,119 +1,96 @@
-const formulario = document.getElementById('formulario');
+const formulario = document.querySelector('.formulario-inicio'); // Seleccionar formulario por clase
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('contrasenia');
 const inputs = document.querySelectorAll('input');
-const botonEnviar = document.querySelector('button');
-const mensajeError = document.getElementById('formulario-mensaje');
+const botonEnviar = document.getElementById('boton');
+const mensajeError = document.querySelector('.error');
+const mensajeExito = document.querySelector('.exito');
 
-// Ocultar mensaje de error inicialmente
+const iconoOjo = document.querySelector('.bx-show-alt');
+
 mensajeError.style.display = 'none';
+mensajeExito.style.display = 'none';
 
 // Expresiones regulares para validación
-const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com|org|net)$/;
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#?!@$%^&*-])[A-Za-z\d#?!@$%^&*-]{8,12}$/;
+const expresiones = {
 
-// Objeto para controlar el estado de validación
-const campos = {
-    email: false,
-    contrasenia: false
+    emailRegex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com|org|net)$/,
+    passwordRegex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#?!@$%^&*-])[A-Za-z\d#?!@$%^&*-]{8,12}$/
 }
 
-
-
-// Mostrar/ocultar contraseña
-const iconoOjo = document.querySelector(".bx")
-iconoOjo.addEventListener("click", e => {
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        iconoOjo.classList.remove('bx-show-alt');
-        iconoOjo.classList.add('bx-hide');
-    } else {
-        passwordInput.type = "password";
-        iconoOjo.classList.add('bx-show-alt');
-        iconoOjo.classList.remove('bx-hide');
-    }
-});
-
+const campos = {
+    emailInput: false,
+    passwordInput: false
+}
 
 
 const validarFormulario = (e) => {
     switch (e.target.name) {
         case "email":
-            validarCampo(emailRegex, e.target, 'email');
+            validarCampo(expresiones.emailRegex, e.target, 'email');
             break;
         case "contrasenia":
-            validarCampo(passwordRegex, e.target, 'contrasenia');
+            validarCampo(expresiones.passwordRegex, e.target, 'password');
             break;
     }
-}
+};
+
+
+
+formulario.addEventListener('submit', (e) => {
+    console.log(`campos:`, campos);
+    e.preventDefault();
+    if (campos.email && campos.password) {
+        console.log(`enviado`);
+        mensajeError.style.display = 'none';
+        mensajeExito.style.display = 'block';
+        formulario.reset();
+    } else {
+        console.log(`mensaje esperado error`);
+        mensajeError.style.display = 'block';
+        mensajeExito.style.display = 'none';
+    }
+});
 
 const validarCampo = (expresion, input, campo) => {
     const grupo = document.getElementById(`${campo}-group`);
-    const iconoValidacion = grupo.querySelector('.validacion-estado');
-
+    console.log(grupo);
+    const iconoCheck = grupo.querySelector('.icono-check');
+    console.log(iconoCheck);
+    const iconoError = grupo.querySelector('.icono-correoNoValido');
+    console.log(iconoError);
     if (expresion.test(input.value)) {
         grupo.classList.remove('formulario-grupo-incorrecto');
         grupo.classList.add('formulario-grupo-correcto');
-        if (iconoValidacion) {
-            iconoValidacion.classList.remove('fa-times-circle');
-            iconoValidacion.classList.add('fa-check-circle');
-        }
+        iconoCheck.style.display = 'block';
+        iconoError.style.display = 'none'
+        console.log(`correcto`)
         campos[campo] = true;
     } else {
         grupo.classList.add('formulario-grupo-incorrecto');
         grupo.classList.remove('formulario-grupo-correcto');
-        if (iconoValidacion) {
-            iconoValidacion.classList.add('fa-times-circle');
-            iconoValidacion.classList.remove('fa-check-circle');
-        }
+        iconoCheck.style.display = 'none';
+        iconoError.style.display = 'block';
+        console.log(`INCORRECTO`)
         campos[campo] = false;
     }
-}
+};
 
 
+
+// Toggle password visibility
+iconoOjo.addEventListener('click', () => {
+    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    iconoOjo.classList.toggle('bx-show-alt');
+    iconoOjo.classList.toggle('bx-hide');
+});
 // Event listeners
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
 });
 
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    if (campos.email && campos.contrasenia) {
-        formulario.reset();
-
-        document.querySelectorAll('.formulario-grupo-correcto').forEach((icono) => {
-            icono.classList.remove('formulario-grupo-correcto');
-        });
-
-        // Ocultar mensaje de error si estaba visible
-        mensajeError.style.display = 'none';
-
-        // Mostrar mensaje de éxito
-        const mensajeExito = document.createElement('div');
-        mensajeExito.classList.add('formulario-mensaje-exito');
-        mensajeExito.textContent = '¡Formulario enviado exitosamente!';
-        formulario.appendChild(mensajeExito);
-
-        setTimeout(() => {
-            mensajeExito.remove();
-        }, 3000);
-    } else {
-        mensajeError.style.display = 'block';
-        setTimeout(() => {
-            mensajeError.style.display = 'none';
-        }, 3000);
-    }
-});
-
-
-
-
-
-
-
-//VERIFICAMOS LAS TECLAS QUE PRESIONADAS LFJ
+//VERIFICAMOS LAS TECLAS QUE PRESIONAS
 // inputs.forEach((input) => {
 //     input.addEventListener('keyup', () => {
 //         console.log(`Tecla levantada`);

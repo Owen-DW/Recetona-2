@@ -13,7 +13,7 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../imagenes/imagenFondo.png);
+    background-image: url(/assets/img/imagenFondo.png);
 }
 
 .formulario-inicio {
@@ -102,6 +102,16 @@
     position: relative;
 }
 
+.icono-check {
+    display: none;
+    transform: translateX(-120%);
+}
+
+.icono-correoNoValido {
+    display: none;
+    transform: translateX(-120%);
+}
+
 .contrasenia {
     font-size: 1.5rem;
     width: 400px;
@@ -126,6 +136,17 @@
 /* Estilos para el mensaje de error */
 
 .formulario-mensaje {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.error {
     width: 100%;
     text-align: center;
     margin-bottom: 15px;
@@ -134,8 +155,6 @@
     border-radius: 5px;
     color: #fff;
     font-size: 14px;
-    display: none;
-    /* Oculto por defecto */
 }
 
 .formulario-mensaje p {
@@ -144,23 +163,6 @@
 
 .formulario-mensaje i {
     margin-right: 8px;
-}
-
-
-/* Resto de los estilos de validación */
-
-.formulario-grupo-correcto .validacion-estado {
-    color: #1ed12d;
-    opacity: 1;
-}
-
-.formulario-grupo-incorrecto .formulario-input {
-    border: 3px solid #bb2929;
-}
-
-.formulario-grupo-incorrecto .validacion-estado {
-    color: #bb2929;
-    opacity: 1;
 }
 
 .formulario-input-error {
@@ -174,16 +176,11 @@
     display: block;
 }
 
-.formulario-mensaje-exito {
+.exito {
     font-size: 14px;
-    color: #119200;
+    background-color: #43a800;
     padding: 10px 0;
     text-align: center;
-    display: none;
-}
-
-.formulario-mensaje-exito-activo {
-    display: block;
 }
 
 

@@ -17,23 +17,25 @@
             <div class="formulario-inputs" id="formulario">
                 <div class="email-group" id="email-group">
                     <input type="text" name="email" id="email" class="formulario-input" placeholder="Email*">
-                    <i class="fas fa-times-circle validacion-estado"></i>
-                    <p class="formulario-input-error">El correo solo puede contener letras, números, puntos, guiones y guión bajo.</p>
+                    <img class="icono-check" src="/assets/img/boxicons-2.1.4-SVG-36/svg/bx-check-circle.svg">
+                    <img class="icono-correoNoValido" src="/assets/img/boxicons-2.1.4-SVG-36/svg/bx-x-circle.svg">
+                    <p class="formulario-input-error">El correo debe contener '@' y terminar en '.com, .org o .net'.</p>
                 </div>
-
                 <div class="password-group" id="password-group">
                     <input type="password" name="contrasenia" id="contrasenia" class="formulario-input" placeholder="Contraseña*">
+                    <img class="icono-check" src="/assets/img/boxicons-2.1.4-SVG-36/svg/bx-check-circle.svg">
+                    <img class="icono-correoNoValido" src="/assets/img/boxicons-2.1.4-SVG-36/svg/bx-x-circle.svg">
                     <i class="bx bx-show-alt"></i>
-                    <i class="fas fa-times-circle validacion-estado"></i>
                     <p class="formulario-input-error">La contraseña debe tener entre 8 y 12 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.</p>
                 </div>
 
-                <!-- Mensaje de error general -->
+                <!-- Mensaje general -->
                 <div class="formulario-mensaje" id="formulario-mensaje">
-                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
+                    <p class="error"><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
+                    <p class="exito"> FORMULARIO ENVIADO </p>
                 </div>
             </div>
-            <button type="submit" id="boton"> REGISTRARSE</button>
+            <button type="submit" id="boton">REGISTRARSE</button>
             <div class="seccion-iniciar-sesion">
                 <p>¿Ya tenes cuenta? <a href="../html/login.html" target="_blank"> Iniciar sesión </a></p>
             </div>
