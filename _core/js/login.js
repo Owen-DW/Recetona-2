@@ -7,14 +7,6 @@ let mensaje=document.querySelector("#mensaje");
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com|org|net)$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#?!%$])[A-Za-z\d#?!%$]{8,12}$/;
 
-let formulario = document.querySelector('.formularios');
-let emailInput = document.querySelector('#email');
-let passwordInput = document.querySelector('#contraseña');
-let botonEnviar = document.getElementsByTagName('button')[0];
-let mensaje=document.querySelector("#mensaje");
-const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com|org|net)$/;
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#?!%$])[A-Za-z\d#?!%$]{8,12}$/;
-
 botonEnviar.disabled = true;
 botonEnviar.style.backgroundColor = "red";
 
@@ -48,32 +40,32 @@ function validarCampoVacioEnFormulario() {
     return true;
 }
 
-//llamamos a la funcion a traves de addEvnet d
-formulario.addEventListener
-('submit', (e) => {
-    if (!validarCampoVacioEnFormulario()) {
-        e.preventDefault();
+// verifica cada campo sea distinto de vacio y cumpla con las validaciones de caraceteres (en el segundo if)
+function estanCompletosYValidos() {
+
+    if (emailInput.value.trim() !== '' && passwordInput.value.trim() !== '') {
+        if (validarEmail() && validarContrasena()) {
+            botonEnviar.disabled = false;
+            botonEnviar.style.backgroundColor = "green";
+            return true;
+        }
+    }
+    botonEnviar.disabled = true;
+    botonEnviar.style.backgroundColor = "red";
+    return false;
+}
+
+formulario.addEventListener('submit', (e) => {
+    if (!validarCampoVacioEnFormulario() || !validarEmail() || !validarContrasena()) {
+        e.preventDefault(); // aca se previene el envio del form si algun campo no es válido
     }
 });
 
-//CHAT
-// 2) Función para verificar si los campos están completos
-function estanCompletosLosCampos() {
-    // Verificamos que ambos campos no estén vacíos
-    if (emailInput.value.trim() !== '' && passwordInput.value.trim() !== '') {
-        botonEnviar.enable  = false; // Habilitamos el botón
-        botonEnviar.style.backgroundColor= "#fff5f5";
-    } else {
-        botonEnviar.disabled = true; // Deshabilitamos el botón
-        alert("COMPLETA BOLUDON");
-        botonEnviar.style.backgroundColor="green";
-        
-    }
+
+emailInput.addEventListener('keyup', estanCompletosYValidos);
+passwordInput.addEventListener('keyup', estanCompletosYValidos);
+
+function mostrarMensajeError(mensajeError) {
+    mensaje.innerHTML = `<p>${mensajeError}</p>`;
+    mensaje.style.color = "red"; 
 }
-
-// Añadimos eventos para detectar cambios en los campos
-emailInput.addEventListener('click', estanCompletosLosCampos);
-passwordInput.addEventListener('click', estanCompletosLosCampos);
-
-// Inicialmente deshabilitamos el botón al cargar la página
-botonEnviar.disabled = true;
