@@ -1,17 +1,16 @@
-
 let formulario = document.querySelector('.formularios');
 let emailInput = document.querySelector('#email');
 let passwordInput = document.querySelector('#contraseña');
 let botonEnviar = document.getElementsByTagName('button')[0];
-let mensaje=document.querySelector("#mensaje");
+let mensaje = document.querySelector("#mensaje");
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com|org|net)$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#?!%$])[A-Za-z\d#?!%$]{8,12}$/;
 
 botonEnviar.disabled = true;
-botonEnviar.style.backgroundColor = "red";
+botonEnviar.style.backgroundColor = "#f66060";
 
 function validarEmail() {
-    if (!emailRegex.test(emailInput.value)) { 
+    if (!emailRegex.test(emailInput.value)) {
         mostrarMensajeError("El email no tiene un formato válido. Debe contener un @ en el medio y terminar en .com, .org o .net");
         return false;
         // se dcidio poner un mensaje de en vez de un alert, llamando a la funcion mostrarMensajeError
@@ -25,13 +24,13 @@ function validarContrasena() {
         mostrarMensajeError("La contraseña debe tener entre 8 y 12 caracteres, incluir una mayuscula, una minuscula, un número y uno de los siguientes caracteres especiales: # ? ! % $");
         return false;
     }
-     mensaje.innerHTML = ""
+    mensaje.innerHTML = ""
     return true;
 }
 
 // se obliga al usuario llenar ambos formularios
 function validarCampoVacioEnFormulario() {
-    for (let input of [emailInput, passwordInput]) {
+    for (let input of[emailInput, passwordInput]) {
         if (input.value.trim() === "") {
             alert(`El campo ${input.placeholder} es obligatorio`);
             return false;
@@ -51,7 +50,7 @@ function estanCompletosYValidos() {
         }
     }
     botonEnviar.disabled = true;
-    botonEnviar.style.backgroundColor = "red";
+    botonEnviar.style.backgroundColor = "#f66060";
     return false;
 }
 
@@ -67,5 +66,15 @@ passwordInput.addEventListener('keyup', estanCompletosYValidos);
 
 function mostrarMensajeError(mensajeError) {
     mensaje.innerHTML = `<p>${mensajeError}</p>`;
-    mensaje.style.color = "red"; 
+    mensaje.style.color = "red";
 }
+
+
+
+// Toggle password visibility
+const iconoOjo = document.querySelector('.bx-show-alt');
+iconoOjo.addEventListener('click', () => {
+    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    iconoOjo.classList.toggle('bx-show-alt');
+    iconoOjo.classList.toggle('bx-hide');
+});

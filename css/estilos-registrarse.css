@@ -22,9 +22,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #fff5f5;
-    max-width: 570px;
-    min-width: 20%;
+    background-color: #fff6f6df;
+    max-width: 870px;
+    min-width: 50%;
     /*la prioridad la tiene este */
     margin: auto;
     /**

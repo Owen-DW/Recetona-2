@@ -84,7 +84,7 @@ iconoOjo.addEventListener('click', () => {
     iconoOjo.classList.toggle('bx-show-alt');
     iconoOjo.classList.toggle('bx-hide');
 });
-// Event listeners
+// tecla presionada para verificar
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
