@@ -26,7 +26,7 @@ body {
 
 #navegacion-categoria {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     margin: 10px;
     background-color: rgb(0, 0, 0);
     font-family: 'Hind Vadodara';
