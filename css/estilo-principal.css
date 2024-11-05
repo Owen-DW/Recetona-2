@@ -10,17 +10,23 @@
 body {
     background-color: #010000;
 }
+.slide img{
+    height: 80vh;
+
+}
+
+.slide{
+    margin: 10px 10px 10px 10px ;
+}
 
 #encabezado-principal {
     background-color: red;
     color: white;
     background-image: url(https://img.freepik.com/foto-gratis/cocina-rustica-electrodomesticos-modernos-interior-generados-ia_188544-38458.jpg);
     background-size: cover;
-    /* Ajusta la imagen al tamaño del div */
     background-position: center;
     /* Centra la imagen */
     height: 500px;
-    /* Ajusta la altura del div para que la imagen se vea completa */
     width: 100%;
 }
 
