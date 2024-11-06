@@ -11,11 +11,9 @@ body {
     background-color: #010000;
 }
 .slide img{
-    height: 80vh;
     width: 100%;
     object-fit:cover;
-   
-
+     height: 80vh;
 }
 
 .slide{
