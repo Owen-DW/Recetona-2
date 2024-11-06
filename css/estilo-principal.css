@@ -1,4 +1,4 @@
-﻿@import url("_core/css/temas_colores_fuentes.css");
+﻿@import url("/_core/css/temas_colores_fuentes.css");
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC');
 @import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara');
@@ -19,6 +19,14 @@ body {
 .slide{
     margin: 5px ;
 }
+.carousel-caption p {
+    font-family: 'Hind Vandadora';
+}
+.carousel-caption h2 {
+    font-family: 'Crimson Text';
+    
+}
+
 
 p{
     font-family: 'Hind Vandadora';
