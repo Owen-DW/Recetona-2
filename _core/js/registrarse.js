@@ -37,21 +37,6 @@ const validarFormulario = (e) => {
 
 
 
-formulario.addEventListener('submit', (e) => {
-    console.log(`campos:`, campos);
-    e.preventDefault();
-    if (campos.email && campos.password) {
-        console.log(`enviado`);
-        mensajeError.style.display = 'none';
-        mensajeExito.style.display = 'block';
-        formulario.reset();
-    } else {
-        console.log(`mensaje esperado error`);
-        mensajeError.style.display = 'block';
-        mensajeExito.style.display = 'none';
-    }
-});
-
 const validarCampo = (expresion, input, campo) => {
     const grupo = document.getElementById(`${campo}-group`);
     console.log(grupo);
@@ -76,6 +61,22 @@ const validarCampo = (expresion, input, campo) => {
     }
 };
 
+
+
+
+formulario.addEventListener('submit', (e) => {
+    console.log(`campos:`, campos);
+    e.preventDefault();
+    if (campos.email && campos.password) {
+        console.log(`enviado`);
+        formulario.submit();
+        alert(`Enviado correctamente`);
+    } else {
+        console.log(`mensaje esperado error`);
+        mensajeError.style.display = 'block';
+        mensajeExito.style.display = 'none';
+    }
+});
 
 
 // Funcionalidad del icono del ojo
