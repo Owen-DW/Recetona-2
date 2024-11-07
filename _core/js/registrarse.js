@@ -45,6 +45,7 @@ formulario.addEventListener('submit', (e) => {
         mensajeError.style.display = 'none';
         mensajeExito.style.display = 'block';
         formulario.reset();
+        
     } else {
         console.log(`mensaje esperado error`);
         mensajeError.style.display = 'block';
@@ -89,6 +90,7 @@ inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
 });
+
 
 //VERIFICAMOS LAS TECLAS QUE PRESIONAS
 // inputs.forEach((input) => {
