@@ -70,8 +70,6 @@ function mostrarMensajeError(mensajeError) {
 }
 
 
-
-// Toggle password visibility
 const iconoOjo = document.querySelector('.bx-show-alt');
 iconoOjo.addEventListener('click', () => {
     passwordInput.type = passwordInput.type === "password" ? "text" : "password";

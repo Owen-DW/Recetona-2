@@ -1,4 +1,4 @@
-﻿@import url("_core/css/temas_colores_fuentes.css");
+﻿@import url("/_core/css/temas_colores_fuentes.css");
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC');
 @import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara');
@@ -10,17 +10,85 @@
 body {
     background-color: #010000;
 }
+.slide img{
+    width: 100%;
+    object-fit:cover;
+     height: 80vh;
+}
+
+.slide{
+    margin: 5px ;
+}
+.carousel-caption p {
+    font-family: 'Hind Vandadora';
+}
+.carousel-caption h2 {
+    font-family: 'Crimson Text';
+    
+}
+
+
+p{
+    font-family: 'Hind Vandadora';
+    color: aliceblue;
+ }
+ img {
+    width: 440px;
+    height: 440px;
+ }
+ #titulo-imagen{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-bottom: 4%;
+ }
+ #titulo-imagen h1{
+    border-radius: 0.3cap;
+    font-size: 60px;
+    margin-top: 40px;
+    margin-left: 20px;
+   
+ }
+ 
+ #encabezado-principal {
+    font-family: 'Crimson Text';
+    font-size: 25px;
+    text-align: center;
+    display: inline-block; 
+ }
+ 
+ #titulo{
+    background-color: hwb(0 0% 91% / 0.875);
+    color:rgb(255, 240, 211);
+    display: inline-block; 
+    padding:10px; 
+    
+    
+ }
+ #parrafo-inicio{
+    background-color: hwb(0 4% 96% / 0.944);
+    padding: 20px;
+    display: inline-block; 
+    justify-content: center;
+    border-radius: 10px;
+ }
+ 
+ #imagen-logo-principal{
+    
+    margin-bottom: -55px;
+    
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    
+ }
 
 #encabezado-principal {
     background-color: red;
     color: white;
-    background-image: url(https://img.freepik.com/foto-gratis/cocina-rustica-electrodomesticos-modernos-interior-generados-ia_188544-38458.jpg);
     background-size: cover;
-    /* Ajusta la imagen al tamaño del div */
     background-position: center;
     /* Centra la imagen */
-    height: 500px;
-    /* Ajusta la altura del div para que la imagen se vea completa */
     width: 100%;
 }
 
@@ -500,9 +568,4 @@ body {
 
 .item-valor-rating {
     margin: 0px;
-}
-
-.carousel-inner {
-    max-width: 1300px;
-    margin: auto;
 }
