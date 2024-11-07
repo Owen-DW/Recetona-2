@@ -1,7 +1,5 @@
-import recetas from "../../data/recetas.json"
-with { type: 'json' };
-import configuracion from "../../config/configuracion.json"
-with { type: 'json' };
+import recetas from "../../data/recetas.json" with { type: 'json' };
+import configuracion from "../../config/configuracion.json" with { type: 'json' };
 
 const tabCategoria1 = document.querySelector("#tab-categoria-1");
 
@@ -56,33 +54,3 @@ linksCategorias.forEach(function(linkCategoria) {
 if (configuracion["modo-test-prod"] === "prod") {
     tabCategoria1.click();
 };
-
-if (linkCategoria.innerText === value.Categoria || linkCategoria.innerText === "Todos") {
-    const articulo = document.querySelector(`article#${value.Id}`);
-
-    // Mostrar información de la receta
-    articulo.querySelector('.item-valor-nombre').innerText = value.Nombre;
-    articulo.querySelector('.item-valor-autor').innerText = value.Autor;
-    articulo.querySelector('.item-valor-descripcion').innerText = value.Descripcion;
-    articulo.querySelector('.item-valor-portada').src = value.Portada;
-    articulo.querySelector('.item-valor-rating').innerText = value.Rating;
-
-    // Mostrar campos personalizados
-    articulo.querySelector('.item-campo-personalizado_1').innerText = value['personalizado_1.Tiempo'];
-    articulo.querySelector('.item-valor-personalizado_1').innerText = 'Tiempo';
-    articulo.querySelector('.item-campo-personalizado_2').innerText = value['personalizado_2.Dificultad'];
-    articulo.querySelector('.item-valor-personalizado_2').innerText = 'Dificultad';
-    articulo.querySelector('.item-campo-personalizado_3').innerText = value['personalizado_3.Comensales'];
-    articulo.querySelector('.item-valor-personalizado_3').innerText = 'Comensales';
-    articulo.querySelector('.item-campo-personalizado_4').innerText = 'Ingredientes';
-    articulo.querySelector('.item-valor-personalizado_4').innerText = value['personalizado_4.Ingredientes'];
-    articulo.querySelector('.item-campo-personalizado_5').innerText = 'Preparación';
-    articulo.querySelector('.item-valor-personalizado_5').innerText = value['personalizado_5.Preparación'];
-
-    // Mostrar artículo
-    articulo.style.display = 'block';
-} else {
-    // Ocultar artículo
-    const articulo = document.querySelector(`article#${value.Id}`);
-    articulo.style.display = 'none';
-}
