@@ -1,7 +1,5 @@
-﻿import recetas from "../../data/recetas.json"
-with { type: 'json' };
-import configuracion from "../../config/configuracion.json"
-with { type: 'json' };
+﻿import recetas from "../../data/recetas.json" with { type: 'json' };
+import configuracion from "../../config/configuracion.json"with { type: 'json' };
 
 
 const tabCategoria1 = document.querySelector("#tab-categoria-1");
