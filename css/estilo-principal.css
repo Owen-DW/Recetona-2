@@ -574,49 +574,4 @@ p{
     max-height: 500px;
 }
 
-.item-valor-rating {
-    margin: 0px;
-}
-
-.item-valor-rating{
-   margin: 0px;
-}
-
-#seccion-rating{
-   display: flex;
-   margin-top: 10px;
-   margin-bottom: 10px;
-   height: 60px;
-}
-
-.marco-rating{
-   display: flex;
-   background-color: darkgoldenrod;
-   width: 26px;
-   justify-content: center;
-   align-items: center;
-   font-size: 24px;
-}
-
-#contenedor-rating{
-   margin: 2px auto;
-   background-color: rgb(31, 31, 31);
-   display: flex;
-   align-items: center;
-}
-
-.estrella-disenio{
-   height: 35px;
-   margin: 6px;
-}
-
-.estrella-hover{
-   opacity: 50%;
-}
-
-
-
-
-
-
 
