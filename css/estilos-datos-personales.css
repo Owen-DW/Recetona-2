@@ -4,12 +4,16 @@
     color: #2e1715;
 }
 
-body{
+body {
     background-image: url(/assets/img/imagenFondo.png);
-    background-size: cover;        /* La imagen cubre todo el fondo */
-    background-repeat: no-repeat;  /* No se repite */
-    background-position: center;   /* Centrada */
-    background-attachment: fixed;  /* Fija mientras se hace scroll */ 
+    background-size: cover;
+    /* La imagen cubre todo el fondo */
+    background-repeat: no-repeat;
+    /* No se repite */
+    background-position: center;
+    /* Centrada */
+    background-attachment: fixed;
+    /* Fija mientras se hace scroll */
 }
 
 .contenedor {
@@ -20,44 +24,42 @@ body{
     padding: 20px;
     overflow: hidden;
     border-radius: 9px;
-    
 }
 
-.mapa-datos #primero{
-    float:left;
+.mapa-datos #primero {
+    float: left;
     list-style-type: none;
     margin-right: 10px;
 }
 
-hr{
+hr {
     margin-bottom: 15px;
     margin-top: 20px;
 }
 
-.titulos-principales h2{
+.titulos-principales h2 {
     margin-top: 10px;
 }
 
-.entrada-dato{
+.entrada-dato {
     margin-top: 15px;
     margin-bottom: 12px;
 }
 
-.entrada-dato input{
+.entrada-dato input {
     display: block;
     width: 100%;
     height: 25px;
     border-color: rgba(0, 0, 0, 0.151);
-    
 }
 
-.entrada-dato input:focus{
+.entrada-dato input:focus {
     outline: none;
     border-color: #ffffff50;
     box-shadow: 0 0 5px rgba(129, 129, 129, 0.5);
 }
 
-.boton-formulario{
+.boton-formulario {
     margin-bottom: 10px;
 }
 
@@ -66,12 +68,18 @@ hr{
     border: solid 1px;
 }
 
-.display-inline{
+.display-inline {
     display: inline-block;
     margin-right: 40px;
 }
 
-#nombre-registro, #apellido-registro, #tipo-doc, #num-doc, #fecha-nacimiento, #tel-celular, #email-sec {
+#nombre-registro,
+#apellido-registro,
+#tipo-doc,
+#num-doc,
+#fecha-nacimiento,
+#tel-celular,
+#email-sec {
     margin: 0px;
 }
 
@@ -88,25 +96,28 @@ hr{
     width: 20%;
 }
 
-#tipo-doc, #num-doc, #fecha-nacimiento {
+#tipo-doc,
+#num-doc,
+#fecha-nacimiento {
     margin-top: 20px;
     margin-right: 11.5px;
 }
 
-#email-sec, #tel-celular {
+#email-sec,
+#tel-celular {
     margin-top: 20px;
     margin-right: 21px;
     margin-bottom: 20px;
 }
 
-.boton-formulario input{
+.boton-formulario input {
     padding: 5px 25px;
     background-color: rgba(255, 254, 218, 0.979);
     color: #2e1715;
 }
 
-.boton-formulario input:hover{
+.boton-formulario input:hover {
     background-color: #a25349;
-    color:#f7efed;
+    color: #f7efed;
     transition: all 0.2s;
 }

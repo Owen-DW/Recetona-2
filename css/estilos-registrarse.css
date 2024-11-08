@@ -118,6 +118,12 @@
     padding: 10px 5px;
 }
 
+.contenedor-input-error {
+    position: absolute;
+    width: 100%;
+    margin-top: 65px;
+}
+
 
 /*COLOCARL EL ICONO DEL OJO*/
 
@@ -173,6 +179,7 @@
 }
 
 .formulario-grupo-incorrecto .formulario-input-error {
+    font-weight: bolder;
     display: block;
 }
 

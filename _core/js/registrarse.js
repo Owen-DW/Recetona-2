@@ -79,45 +79,18 @@ const validarCampo = (expresion, input, campo) => {
 
 
 
-// Toggle password visibility
+// Funcionalidad del icono del ojo
 iconoOjo.addEventListener('click', () => {
-    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+    } else {
+        passwordInput.type = "password";
+    }
     iconoOjo.classList.toggle('bx-show-alt');
     iconoOjo.classList.toggle('bx-hide');
 });
-// tecla presionada para verificar
+// tecla presionada para verificar antes de enviar
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
 });
-
-
-//VERIFICAMOS LAS TECLAS QUE PRESIONAS
-// inputs.forEach((input) => {
-//     input.addEventListener('keyup', () => {
-//         console.log(`Tecla levantada`);
-//     });
-// });
-
-// botonEnviar.addEventListener('click', () => {
-//     console.log('Botón enviar clickeado');
-// });
-
-
-
-// //Validamos que el campo de los inputs no esten vacios
-// function validarCampoVacioEnFormulario() {
-//     let validado = false;
-//     for (let i = 0; i < inputs.length; i++) {
-//         if (inputs[i].value.trim() === "") {
-//             alert(`El campo ${inputs[i].placeholder} es obligatorio`);
-//             break;
-//         }
-//     }
-//     return validado;
-// }
-// formulario.addEventListener('submit', (e) => {
-//     if (!validarCampoVacioEnFormulario()) {
-//         e.preventDefault();
-//     }
-// });
