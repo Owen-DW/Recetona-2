@@ -1,6 +1,40 @@
 ﻿import recetas from "../../data/recetas.json"with { type: 'json' };
 import configuracion from "../../config/configuracion.json"with { type: 'json' };
 
+
+let ratings = [];
+let misRecetas = [];
+
+recetas.forEach(item => {
+   ratings.push(item.Rating);
+});
+
+function generateStars(ratings) {
+    let stars = '';
+    for (let i = 0; i < 5; i++) {
+       if (i < ratings) {
+          stars += "\u2605";
+       } else {
+          stars += "\u2606";
+       }
+    }
+    return stars;
+ }
+
+
+function cargarEstrellas() {
+   document.querySelectorAll(".articulo-categoria").forEach((article, index) => {
+      // Busca el elemento donde colocarás las estrellas
+      const ratingElement = article.querySelector(".item-valor-rating");
+      // Crea y agrega el elemento de estrellas
+      if (ratingElement) {
+         ratingElement.innerHTML = generateStars(ratings[index]);
+         ratingElement.classList.add("estrellasIcono");
+      }
+   });
+}
+
+
 const tabCategoriaInicial = document.querySelector("#btnTodos");
 const tab1 = document.querySelector("#tab-categoria-1");
 const tab2 = document.querySelector("#tab-categoria-2");
@@ -88,21 +122,19 @@ linksCategorias.forEach(function(linkCategoria) {
                                 document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_5").innerText = value[property];
                                 break;
                         }
-
+                        
                     };
-
-
-
+                    
                     document.querySelector("article." + value["Id"].split("-")[1]).id = value["Id"];
 
                 };
-
-
-
+                
             });
+            
         }
+        cargarEstrellas();
     });
-
+    
 
 });
 
