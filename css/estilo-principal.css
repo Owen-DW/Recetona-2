@@ -525,6 +525,7 @@ box-shadow: 0px 0px 10px white;
 #seccion-rating{
    display: flex;
    margin-top: 10px;
+   margin-bottom: 10px;
    height: 60px;
 }
 
