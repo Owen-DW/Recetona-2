@@ -52,14 +52,14 @@ formulario.addEventListener('submit', (e) => {
     e.preventDefault();
     if (campoEmail) {
         console.log(`correo valido`)
-        mensajeError.style.display = 'none';
-        mensajeExito.style.display = 'block';
-        formulario.reset();
+        alert(`Enviado correctamente`);
+        formulario.submit();
     } else {
         console.log(`INVALIDO`)
         mensajeError.style.display = 'block';
         mensajeExito.style.display = 'none';
     }
+    return false;
 });
 
 

@@ -524,7 +524,9 @@ p{
         background-color: #2e1715;
     }
 }
-
+.input-buscador{
+    color: white;
+}
 
 /* .seccion-footer:hover{
    border-radius: 0px;
