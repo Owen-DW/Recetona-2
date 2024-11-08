@@ -20,21 +20,22 @@
    </section>
 
    <section class="titulos-principales">
-      <h2>Mi usuario</h2>
+      <h2>Mi Usuario</h2>
    </section>
    <hr>
 
-   <form action="">
+<form id="formulario" action="#">
    <div class="entrada-dato">
       <label for="correo">Email principal</label>
-      <input type="email" id="correo" name="email">
+      <input type="text" id="correo" name="email">
    </div>
 
-   <div class="boton-formulario">
-      <input type="submit" value="Guardar cambios">
+   <div id="boton-guardar" class="boton-formulario desactivado">
+      <input id="boton-guardar-usuario" type="submit" value="Guardar cambios">
    </div>
-
+   
    <hr class="linea-separadora">
+
 
    <div class="entrada-dato display-inline">
       <label for="contraseña">Contraseña</label>
@@ -42,9 +43,11 @@
    </div>
 
    <div class="boton-formulario display-inline">
-      <input type="submit" value="Cambiar">
+      <input id="boton-cambiar-usuario" type="submit" value="Cambiar">
    </div>
-
+</form>
+   <div class="warnings" id="warning-miUsuario"></div>
+   
    <hr class="linea-separadora mas-gruesa">
 
    <div class="mapa-datos">
@@ -55,47 +58,58 @@
    <div class="titulos-principales">
       <h2>Datos Personales</h2>
    </div>
-   <hr >
+   <hr>
 
+<form id="formulario2" action="#">
    <div class="entrada-dato display-inline" id="nombre-registro">
       <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="name">
+      <input type="text" id="nombre" name="nombre">
    </div>
 
-   <div class="entrada-dato display-inline" id="nombre-registro">
+   <div class="entrada-dato display-inline" id="apellido-registro">
       <label for="apellido">Apellido</label>
-      <input type="text" id="apellido" name="email">
+      <input type="text" id="apellido" name="apellido">
    </div>
 
    <div class="entrada-dato display-inline" id="tipo-doc">
       <label for="tipo-docu">Tipo</label>
-      <input type="text" id="tipo-docu" name="tipoDoc">
+      <select type="text" id="tipo-docu" name="tipo-docu">
+         <option value=""></option>
+         <option value="DNI">DNI</option>
+         <option value="Pasaporte">Pasaporte</option>
+         <option value="CI">CI</option>
+      </select>
    </div>
 
    <div class="entrada-dato display-inline" id="num-doc">
       <label for="numero-doc">Número de documento</label>
-      <input type="number" id="numero-doc" name="document-num">
+      <input type="text" id="numero-doc" name="numero-doc">
    </div>
    
    <div class="entrada-dato display-inline" id="fecha-nacimiento">
       <label for="fecha-nac">Fecha de nacimiento</label>
-      <input type="date" name="date-birth" id="fecha-nac">
+      <input type="date" name="fecha-nac" id="fecha-nac">
    </div>
 
    <div class="entrada-dato display-inline" id="tel-celular">
       <label for="telefo-cel">Teléfono celular</label>
-      <input type="number" name="number" id="telefo-cel">
+      <input type="text" name="telefo-cel" id="telefo-cel">
    </div>
 
    <div class="entrada-dato display-inline" id="email-sec">
       <label for="email-secundary">Email secundario</label>
-      <input type="email" name="email" id="email-secundary">
+      <input type="text" name="email-secundary" id="email-secundary">
    </div>
 
+   <div class="warnings" id="warning-datos"></div>
+   
    <div class="boton-formulario">
-      <input type="submit" value="Guardar cambios">
+      <input id="boton-guardar-datos" type="submit" value="Guardar cambios">
    </div>
 </form>
+<script src="/_core/js/datos-personales.js"></script>
+
+
 </div>
 
 <script src="/_core/js/datos-personales.js"></script>
