@@ -122,25 +122,19 @@ linksCategorias.forEach(function(linkCategoria) {
                                 document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_5").innerText = value[property];
                                 break;
                         }
-                        cargarEstrellas();
+                        
                     };
-                    cargarEstrellas();
-
-                    cargarEstrellas();
+                    
                     document.querySelector("article." + value["Id"].split("-")[1]).id = value["Id"];
 
                 };
                 
-                cargarEstrellas();
-                
-                
-                
             });
-            cargarEstrellas();
+            
         }
         cargarEstrellas();
     });
-    cargarEstrellas();
+    
 
 });
 
