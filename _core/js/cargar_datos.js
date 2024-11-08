@@ -42,14 +42,13 @@ linksCategorias.forEach(function(linkCategoria) {
                 console.log("recorriendo el recetas: ");
 
             const [key, value] = entry;
-<<<<<<<<< Temporary merge branch 1
-=========
+
 
                 console.log(entry);
                 console.log(key + value);
 
 
->>>>>>>>> Temporary merge branch 2
+
             if (linkCategoria.innerText === value.Categoria) {
 
                     console.log("Verificando si es igual: " + linkCategoria.innerText + " " + value.Categoria);
@@ -67,31 +66,32 @@ linksCategorias.forEach(function(linkCategoria) {
 
                     for (const property in value) {
 
+                    
+                    switch (property.split(".")[0]) {
+                        case "personalizado_1":
+                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_1").innerText = property.split(".")[1];
+                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_1").innerText = value[property];
+                            break;
+                        case "personalizado_2":
+                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_2").innerText = property.split(".")[1];
+                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_2").innerText = value[property];
+                            break;
+                        case "personalizado_3":
+                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_3").innerText = property.split(".")[1];
+                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_3").innerText = value[property];
+                            break;
+                        case "personalizado_4":
+                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_4").innerText = property.split(".")[1];
+                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_4").innerText = value[property];
+                            break;
+                        case "personalizado_5":
+                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_5").innerText = property.split(".")[1];
+                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_5").innerText = value[property];
+                            break;
+                    }
+             
+                };
 
-                        switch (property.split(".")[0]) {
-                            case "personalizado_1":
-                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_1").innerText = property.split(".")[1];
-                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_1").innerText = value[property];
-                                break;
-                            case "personalizado_2":
-                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_2").innerText = property.split(".")[1];
-                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_2").innerText = value[property];
-                                break;
-                            case "personalizado_3":
-                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_3").innerText = property.split(".")[1];
-                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_3").innerText = value[property];
-                                break;
-                            case "personalizado_4":
-                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_4").innerText = property.split(".")[1];
-                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_4").innerText = value[property];
-                                break;
-                            case "personalizado_5":
-                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_5").innerText = property.split(".")[1];
-                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_5").innerText = value[property];
-                                break;
-                        }
-
-                    };
 
 
 
@@ -305,5 +305,3 @@ buscador.addEventListener("keyup",()=>{
 
 
 });
-
-
