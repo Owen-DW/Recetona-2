@@ -41,15 +41,14 @@ linksCategorias.forEach(function(linkCategoria) {
 
                 console.log("recorriendo el recetas: ");
 
-            const [key, value] = entry;
-
+                const [key, value] = entry;
 
                 console.log(entry);
                 console.log(key + value);
 
 
 
-            if (linkCategoria.innerText === value.Categoria) {
+                if (linkCategoria.innerText === value.Categoria) {
 
                     console.log("Verificando si es igual: " + linkCategoria.innerText + " " + value.Categoria);
 
@@ -66,43 +65,42 @@ linksCategorias.forEach(function(linkCategoria) {
 
                     for (const property in value) {
 
-                    
-                    switch (property.split(".")[0]) {
-                        case "personalizado_1":
-                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_1").innerText = property.split(".")[1];
-                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_1").innerText = value[property];
-                            break;
-                        case "personalizado_2":
-                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_2").innerText = property.split(".")[1];
-                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_2").innerText = value[property];
-                            break;
-                        case "personalizado_3":
-                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_3").innerText = property.split(".")[1];
-                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_3").innerText = value[property];
-                            break;
-                        case "personalizado_4":
-                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_4").innerText = property.split(".")[1];
-                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_4").innerText = value[property];
-                            break;
-                        case "personalizado_5":
-                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_5").innerText = property.split(".")[1];
-                            document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_5").innerText = value[property];
-                            break;
-                    }
-             
+
+                        switch (property.split(".")[0]) {
+                            case "personalizado_1":
+                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_1").innerText = property.split(".")[1];
+                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_1").innerText = value[property];
+                                break;
+                            case "personalizado_2":
+                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_2").innerText = property.split(".")[1];
+                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_2").innerText = value[property];
+                                break;
+                            case "personalizado_3":
+                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_3").innerText = property.split(".")[1];
+                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_3").innerText = value[property];
+                                break;
+                            case "personalizado_4":
+                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_4").innerText = property.split(".")[1];
+                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_4").innerText = value[property];
+                                break;
+                            case "personalizado_5":
+                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > h4.item-campo-personalizado_5").innerText = property.split(".")[1];
+                                document.querySelector("article." + value["Id"].split("-")[1] + " > div.detalle-articulo > p.item-valor-personalizado_5").innerText = value[property];
+                                break;
+                        }
+
+                    };
+
+
+
+                    document.querySelector("article." + value["Id"].split("-")[1]).id = value["Id"];
+
                 };
 
 
 
-
-                document.querySelector("article." + value["Id"].split("-")[1]).id = value["Id"];
-                
-            };
-
-
-
-        });
-    }
+            });
+        }
     });
 
 
@@ -240,7 +238,7 @@ function mostrartodo() {
 let resultado = document.querySelector(`#seccion-categoria`);
 recetas.forEach((receta)=> {
     resultado.innerHTML+= `
-                  <article id="${receta.Id}" class="articulo-categoria item01">
+     <article id="${receta.Id}" class="articulo-categoria item01">
       <header class="header-articulo">
         <p class="item-valor-nombre">${receta.Nombre}</p>
         <p class="item-valor-autor">${receta.Autor}</p>
@@ -249,20 +247,20 @@ recetas.forEach((receta)=> {
         <p class="item-valor-rating">${receta.Rating}</p>
       </header>
       <div class="detalle-articulo">
-<h4 class="item-campo-personalizado_1">Tiempo: ${receta["personalizado_1.Tiempo"]}</h4>
-<p class="item-valor-personalizado_1">${receta["personalizado_1.Tiempo"]}</p>
+        <h4 class="item-campo-personalizado_1">Tiempo: ${receta["personalizado_1.Tiempo"]}</h4>
+        <p class="item-valor-personalizado_1">${receta["personalizado_1.Tiempo"]}</p>
 
-<h4 class="item-campo-personalizado_2">Dificultad: ${receta["personalizado_2.Dificultad"]}</h4>
-<p class="item-valor-personalizado_2">${receta["personalizado_2.Dificultad"]}</p>
+        <h4 class="item-campo-personalizado_2">Dificultad: ${receta["personalizado_2.Dificultad"]}</h4>
+     <p class="item-valor-personalizado_2">${receta["personalizado_2.Dificultad"]}</p>
 
-<h4 class="item-campo-personalizado_3">Comensales: ${receta["personalizado_3.Comensales"]}</h4>
-<p class="item-valor-personalizado_3">${receta["personalizado_3.Comensales"]}</p>
+        <h4 class="item-campo-personalizado_3">Comensales: ${receta["personalizado_3.Comensales"]}</h4>
+        <p class="item-valor-personalizado_3">${receta["personalizado_3.Comensales"]}</p>
 
-<h4 class="item-campo-personalizado_4">Ingredientes: ${receta["personalizado_4.Ingredientes"]}</h4>
-<p class="item-valor-personalizado_4">${receta["personalizado_4.Ingredientes"]}</p>
+        <h4 class="item-campo-personalizado_4">Ingredientes: ${receta["personalizado_4.Ingredientes"]}</h4>
+     <p class="item-valor-personalizado_4">${receta["personalizado_4.Ingredientes"]}</p>
 
-<h4 class="item-campo-personalizado_5">Preparación: ${receta["personalizado_5.Preparación"]}</h4>
-<p class="item-valor-personalizado_5">${receta["personalizado_5.Preparación"]}</p>
+        <h4 class="item-campo-personalizado_5">Preparación: ${receta["personalizado_5.Preparación"]}</h4>
+        <p class="item-valor-personalizado_5">${receta["personalizado_5.Preparación"]}</p>
       </div>
     </article>
     `
@@ -305,3 +303,5 @@ buscador.addEventListener("keyup",()=>{
 
 
 });
+
+
