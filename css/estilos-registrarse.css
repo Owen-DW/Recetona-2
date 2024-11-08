@@ -1,117 +1,227 @@
-﻿*{
+﻿* {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
     font-family: 'Crimson Text';
-
 }
 
-
-.formulario-contenido{
+.formulario-contenido {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-position: center center;
-    background-size:cover ;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../imagenes/imagenFondo.png);
-   
-
+    background-image: url(/assets/img/imagenFondo.png);
 }
 
-.formulario-inicio{
+.formulario-inicio {
     border: 4px solid black;
-    border-radius:3px ;
+    border-radius: 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color:#fff5f5;
-    max-width: 570px;
-    min-width: 20%; /*la prioridad la tiene este */
+    background-color: #fff6f6df;
+    max-width: 870px;
+    min-width: 50%;
+    /*la prioridad la tiene este */
     margin: auto;
     /**
     width: min-content; /* yo quiero que minimo tengas este minimo de tamanio*/
-   /* max-width: 50%; /*hasta aca llegas*/
+    /* max-width: 50%; /*hasta aca llegas*/
     /**/
-    padding: 10px 80px ;
+    padding: 10px 80px;
     height: 480px;
 }
-.formulario-inicio h2{
+
+.formulario-inicio h2 {
     color: black;
     text-align: center;
-    font-size:3.2rem;
+    font-size: 3.2rem;
     text-shadow: 0px 7px 7px rgba(rgb(240, 190, 26), green, blue, alpha);
-
-
 }
 
-.formulario-inputs{
+.formulario-inputs {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top:10px ;
+    margin-top: 10px;
     margin-bottom: 10px;
-    
-}
-.formulario-inputs div{
-    display: flex;
-    justify-content: center;
-    
 }
 
-.formulario-inputs input{
+.formulario-inputs div {
+    display: flex;
+    justify-content: center;
+}
+
+.formulario-inputs input {
     width: 100%;
     padding: 15px;
     margin-bottom: 10px;
     margin-top: 10px;
-    border-radius:5px ;
+    border-radius: 5px;
 }
 
-.input ::placeholder{
+.input ::placeholder {
     font-size: 2rem;
 }
+
 .formulario-contenido a {
     text-decoration: none;
 }
 
-.formulario-inicio button{
+.formulario-inicio button {
     padding: 20px;
     color: rgb(21, 17, 0);
     background-color: rgba(255, 254, 218, 0.979);
     font-size: 20px;
     font-weight: bolder;
     font-weight: 900;
-    
 }
-.formulario-inicio button:hover{
+
+.formulario-inicio button:hover {
     background-color: #a25349;
     transition: all 0.5s;
-    color:#f7efed;
-
+    color: #f7efed;
 }
-.seccion-iniciar-sesion{
+
+.seccion-iniciar-sesion {
     display: flex;
     justify-content: center;
     margin-top: 15px;
     margin-bottom: 18px;
 }
 
-.aceptar-terminos-condiciones{
+.aceptar-terminos-condiciones {
     display: flex;
     justify-content: center;
 }
 
-.input-group {
+.password-group {
     position: relative;
 }
 
-#icono-ojo {
-    position:absolute;
-    transform: translateY(-50%);
-    top: 50%;
+.icono-check {
+    display: none;
+    transform: translateX(-120%);
+}
+
+.icono-correoNoValido {
+    display: none;
+    transform: translateX(-120%);
+}
+
+.contrasenia {
+    font-size: 1.5rem;
+    width: 400px;
+    padding: 10px 5px;
+}
+
+.contenedor-input-error {
+    position: absolute;
+    width: 100%;
+    margin-top: 65px;
+}
+
+
+/*COLOCARL EL ICONO DEL OJO*/
+
+.bx {
+    position: absolute;
     right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
     cursor: pointer;
-    width: 20px; 
-    height: 20px; 
+    z-index: 10;
+    color: #666;
+}
+
+
+/* Estilos para el mensaje de error */
+
+.formulario-mensaje {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.error {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: #f66060;
+    padding: 12px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.formulario-mensaje p {
+    margin: 0;
+}
+
+.formulario-mensaje i {
+    margin-right: 8px;
+}
+
+.formulario-input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+    color: #bb2929;
+}
+
+.formulario-grupo-incorrecto .formulario-input-error {
+    font-weight: bolder;
+    display: block;
+}
+
+.exito {
+    font-size: 14px;
+    background-color: #43a800;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+/* Estilos para los íconos de validación */
+
+.validacion-estado {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+
+/* Modificaciones para los grupos de input */
+
+.email-group,
+.password-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.formulario-inputs input {
+    width: 100%;
+    padding: 15px 35px 15px 15px;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: .3s ease all;
+}
+
+.formulario-inputs input:focus {
+    border: 2px solid #3866f2;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
 }
