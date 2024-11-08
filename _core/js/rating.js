@@ -1,8 +1,21 @@
-    let listaDeCategorias = document.getElementsByClassName("#seccion-categoria");
-    let categoria = listaDeCategorias[0].getElementById("categoria01-item01");
-    let ratingDeLaCategoria = categoria.querySelector(".item-valor-rating");
 
-    alert(ratingDeLaCategoria.textContent);
+
+// let seccionCategoria = document.getElementsByClassName("articulo-categoria");
+// let rating = seccionCategoria[20].querySelector(".item-valor-rating").textContent;
+// let estrellas = seccionCategoria[20].querySelector("#contenedor-rating");
+
+// for(let i = 0; i < rating; i++){
+
+// }
+
+
+
+
+    // let listaDeCategorias = document.getElementsByClassName("#seccion-categoria");
+    // let categoria = listaDeCategorias[0].getElementById("categoria01-item01");
+    // let ratingDeLaCategoria = categoria.querySelector(".item-valor-rating");
+
+    // alert(ratingDeLaCategoria.textContent);
 
     
     // let estrellas = document.querySelectorAll(".estrella-disenio");
@@ -60,10 +73,10 @@
 
 // obtenerRating("categoria00-item01");
 // obtenerRating("categoria01-item02");
-let contenedor = document.getElementById("categoria01-item01");
-let estrellas = contenedor.querySelector(".item-valor-rating").textContent;
+// let contenedor = document.getElementById("categoria01-item01");
+// let estrellas = contenedor.querySelector(".item-valor-rating").textContent;
 
-console.log(estrellas);
+// console.log(estrellas);
 
 // function obtenerRating() {
 //     let contenedor = document.getElementById("categoria01-item01");
