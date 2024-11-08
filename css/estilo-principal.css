@@ -373,6 +373,9 @@ p{
 .detalle-articulo {
     overflow: auto;
 }
+.detalle-articulo h4     {
+    color: aliceblue;
+}
 
 .articulo-categoria:hover {
     background-color: #5e030fc4;
@@ -504,6 +507,9 @@ p{
 .contenedor-titulo {
     display: inline-block;
     margin-bottom: 40px;
+}
+.contenedor-titulo h2 {
+    color: aliceblue;
 }
 
 @media(643px < width < 770px) {

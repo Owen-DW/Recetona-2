@@ -267,8 +267,8 @@ recetas.forEach((receta)=> {
 });
 let buscador = document.querySelector(`.input-buscador`);
 buscador.addEventListener("keyup",()=>{
-    let valor = buscador.value;
-    let recetasFiltradas= recetas.filter(receta=> receta.Nombre.indexOf(valor)>-1);
+    let valor = buscador.value.toLowerCase().trim();
+    let recetasFiltradas= recetas.filter(receta=> receta.Nombre.toLowerCase().trim().indexOf(valor)>-1);
     resultado.innerHTML = "";
 
     recetasFiltradas.forEach((receta)=>{
