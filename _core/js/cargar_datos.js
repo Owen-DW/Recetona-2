@@ -1,7 +1,5 @@
-﻿import recetas from "../../data/recetas.json"
-with { type: 'json' };
-import configuracion from "../../config/configuracion.json"
-with { type: 'json' };
+﻿import recetas from "../../data/recetas.json"with { type: 'json' };
+import configuracion from "../../config/configuracion.json"with { type: 'json' };
 
 const tabCategoriaInicial = document.querySelector("#btnTodos");
 const tab1 = document.querySelector("#tab-categoria-1");
@@ -10,12 +8,14 @@ const tab3 = document.querySelector("#tab-categoria-3");
 const tab4 = document.querySelector("#tab-categoria-4");
 const tab5 = document.querySelector("#tab-categoria-5");
 
-var linksCategorias = document.querySelectorAll("a.tab-categoria");
+let linksCategorias = document.querySelectorAll("a.tab-categoria");
 var articulos;
 var cantidadRecetas = 0;
 
 console.log(linksCategorias[0].innerText);
 console.log(linksCategorias[1].textContent);
+
+
 
 linksCategorias.forEach(function(linkCategoria) {
 
@@ -159,10 +159,8 @@ function crearArticulos(cuantos) {
 
         const pRating = document.createElement("p");
         pRating.classList.add("item-valor-rating");
-
         // Agregar los elementos <p> y <img> al <header>
         header.append(pNombre, pAutor, imgPortada, pDescripcion, pRating);
-
         // Crear el <div> detalle-articulo y sus elementos personalizados
         const detalleArticulo = document.createElement("div");
         detalleArticulo.classList.add("detalle-articulo");
@@ -170,31 +168,23 @@ function crearArticulos(cuantos) {
         for (let i = 1; i <= 5; i++) {
             const h4Personalizado = document.createElement("h4");
             h4Personalizado.classList.add(`item-campo-personalizado_${i}`);
-
             const pPersonalizado = document.createElement("p");
             pPersonalizado.classList.add(`item-valor-personalizado_${i}`);
-
             // Agregar cada par de <h4> y <p> al <div> detalle-articulo
             detalleArticulo.append(h4Personalizado, pPersonalizado);
         }
-
         // Agregar <header> y <div> al <article>
         article.append(header, detalleArticulo);
-
         // Agregar el <article> al DOM, por ejemplo, al <body> o a otro contenedor
-
         cuerpo.appendChild(article);
         nro++;
         contador++;
-
         if (contador == 10) {
             contador = 0;
             nro = 1;
             nroCategoria++;
         }
-
     }
-
 }
 
 
@@ -242,3 +232,75 @@ function mostrartodo() {
         }
     });
 }
+
+//Lógica de buscador
+let resultado = document.querySelector(`#seccion-categoria`);
+recetas.forEach((receta)=> {
+    resultado.innerHTML+= `
+                  <article id="${receta.Id}" class="articulo-categoria item01">
+      <header class="header-articulo">
+        <p class="item-valor-nombre">${receta.Nombre}</p>
+        <p class="item-valor-autor">${receta.Autor}</p>
+        <img class="item-valor-portada" src="${receta.Portada}" alt="${receta.Nombre}" id="imagen-${receta.Id}">
+        <p class="item-valor-descripcion">${receta.Descripcion}</p>
+        <p class="item-valor-rating">${receta.Rating}</p>
+      </header>
+      <div class="detalle-articulo">
+<h4 class="item-campo-personalizado_1">Tiempo: ${receta["personalizado_1.Tiempo"]}</h4>
+<p class="item-valor-personalizado_1">${receta["personalizado_1.Tiempo"]}</p>
+
+<h4 class="item-campo-personalizado_2">Dificultad: ${receta["personalizado_2.Dificultad"]}</h4>
+<p class="item-valor-personalizado_2">${receta["personalizado_2.Dificultad"]}</p>
+
+<h4 class="item-campo-personalizado_3">Comensales: ${receta["personalizado_3.Comensales"]}</h4>
+<p class="item-valor-personalizado_3">${receta["personalizado_3.Comensales"]}</p>
+
+<h4 class="item-campo-personalizado_4">Ingredientes: ${receta["personalizado_4.Ingredientes"]}</h4>
+<p class="item-valor-personalizado_4">${receta["personalizado_4.Ingredientes"]}</p>
+
+<h4 class="item-campo-personalizado_5">Preparación: ${receta["personalizado_5.Preparación"]}</h4>
+<p class="item-valor-personalizado_5">${receta["personalizado_5.Preparación"]}</p>
+      </div>
+    </article>
+    `
+});
+let buscador = document.querySelector(`.input-buscador`);
+buscador.addEventListener("keyup",()=>{
+    let valor = buscador.value;
+    let recetasFiltradas= recetas.filter(receta=> receta.Nombre.indexOf(valor)>-1);
+    resultado.innerHTML = "";
+
+    recetasFiltradas.forEach((receta)=>{
+        resultado.innerHTML+=`
+          <article id="${receta.Id}" class="articulo-categoria item01">
+      <header class="header-articulo">
+        <p class="item-valor-nombre">${receta.Nombre}</p>
+        <p class="item-valor-autor">${receta.Autor}</p>
+        <img class="item-valor-portada" src="${receta.Portada}" alt="${receta.Nombre}" id="imagen-${receta.Id}">
+        <p class="item-valor-descripcion">${receta.Descripcion}</p>
+        <p class="item-valor-rating">${receta.Rating}</p>
+      </header>
+      <div class="detalle-articulo">
+      <h4 class="item-campo-personalizado_1">Tiempo: ${receta["personalizado_1.Tiempo"]}</h4>
+<p class="item-valor-personalizado_1">${receta["personalizado_1.Tiempo"]}</p>
+
+<h4 class="item-campo-personalizado_2">Dificultad: ${receta["personalizado_2.Dificultad"]}</h4>
+<p class="item-valor-personalizado_2">${receta["personalizado_2.Dificultad"]}</p>
+
+<h4 class="item-campo-personalizado_3">Comensales: ${receta["personalizado_3.Comensales"]}</h4>
+<p class="item-valor-personalizado_3">${receta["personalizado_3.Comensales"]}</p>
+
+<h4 class="item-campo-personalizado_4">Ingredientes: ${receta["personalizado_4.Ingredientes"]}</h4>
+<p class="item-valor-personalizado_4">${receta["personalizado_4.Ingredientes"]}</p>
+
+<h4 class="item-campo-personalizado_5">Preparación: ${receta["personalizado_5.Preparación"]}</h4>
+<p class="item-valor-personalizado_5">${receta["personalizado_5.Preparación"]}</p>
+      </div>
+    </article>
+        `;
+    });
+
+
+});
+
+
